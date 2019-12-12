@@ -1,7 +1,7 @@
 import React from 'react'
 import './ticTacToe.css'
 
-class Square extends React.Component {
+/* class Square extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +19,24 @@ class Square extends React.Component {
       </button>
     );
   }
+} */
+
+/**
+ * @function 函数组件
+ * 如果你想写的组件只包含一个 render 方法，并且不包含 state，那么使用函数组件就会更简单。
+ * 
+ * 当我们把 Square 修改成函数组件时，我们同时也把 onClick={() => this.props.onClick()}
+ * 改成了更短的 onClick={props.onClick}（注意两侧都没有括号）。
+ */
+function Square(props) {
+  return (
+    <button 
+      className="square" 
+      onClick={props.onClick}
+    >
+      {props.value}
+    </button>
+  )
 }
 
 class Board extends React.Component {
@@ -26,13 +44,17 @@ class Board extends React.Component {
     super(props);
     this.state = {
       squares: Array(9).fill(null),
+      xIsNext: true,
     };
   }
 
   handleClick(i) {
     const squares = this.state.squares.slice();
-    squares[i] = 'X';
-    this.setState({ squares });
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    this.setState({ 
+      squares,
+      xIsNext: !this.state.xIsNext,
+   });
   }
 
   renderSquare(i) {
