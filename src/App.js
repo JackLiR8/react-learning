@@ -1,13 +1,13 @@
 import React from 'react';
-import Game from './demo/ticTacToe';
-import Api from './react-api/ApiDisplay';
+import Game from './demo/TicTacToe';
+import Main from './main-concepts/ApiDisplay';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Game /><hr/>
-      <Api/>
+      <Main/>
     </div>
   );
 }

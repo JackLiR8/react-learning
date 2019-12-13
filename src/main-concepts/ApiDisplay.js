@@ -1,10 +1,10 @@
 import React from 'react'
 import Greet from './Component'
 
-function Api() {
+function Main() {
   return (
     <Greet />
   )
 }
 
-export default Api;
+export default Main;
