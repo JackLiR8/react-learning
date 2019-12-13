@@ -1,9 +1,13 @@
 import React from 'react'
 import Greet from './Component'
+import Clock from './State'
 
 function Main() {
   return (
-    <Greet />
+    <div>
+      <Greet /><hr/>
+      <Clock />
+    </div>
   )
 }
 

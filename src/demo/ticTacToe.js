@@ -1,5 +1,5 @@
 import React from 'react'
-import './ticTacToe.css'
+import './TicTacToe.css'
 
 /**
  * @function 函数组件
