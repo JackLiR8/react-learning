@@ -11,7 +11,7 @@ import React from 'react'
  * @param {Object} props
  */
 function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>
+  return <h2>Hello, {props.name}</h2>
 }
 
 // /**

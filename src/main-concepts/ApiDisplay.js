@@ -1,12 +1,14 @@
 import React from 'react'
 import Greet from './Component'
 import Clock from './State'
+import Event from './Event'
 
 function Main() {
   return (
     <div>
       <Greet /><hr/>
-      <Clock />
+      <Clock /><hr/>
+      <Event />
     </div>
   )
 }
