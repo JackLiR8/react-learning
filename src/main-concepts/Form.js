@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import './Form.css'
 
 /**
  * 在 HTML 中，表单元素（如<input>、 <textarea> 和 <select>）之类的表单元素通常自己
@@ -111,6 +112,55 @@ class FlavorForm extends React.Component {
   }
 }
 
+/**
+ * 处理多个输入
+ * 需要处理多个 input 元素时，我们可以给每个元素添加 name 属性，并让处理函数根据 
+ * event.target.name 的值选择要执行的操作。
+ */
+class Reservation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isGoing: true,
+      numberOfGuests: 6,
+    };
+  }
+
+  handleInputChange = (e) => {
+    const { target } = e;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  render() {
+    return (
+      <form>
+        <label>
+          参与:
+          <input
+            name="isGoing"
+            type="checkbox"
+            checked={this.state.isGoing}
+            onChange={this.handleInputChange} />
+        </label>
+        <br />
+        <label>
+          来宾人数:
+          <input
+            name="numberOfGuests"
+            type="number"
+            value={this.state.numberOfGuests}
+            onChange={this.handleInputChange} />
+        </label>
+      </form>
+    )
+  }
+}
+
 function Forms() {
   return (
     <div>
@@ -119,6 +169,8 @@ function Forms() {
       <EssayForm />
       <br />
       <FlavorForm />
+      <br />
+      <Reservation />
     </div>
   )
 }
