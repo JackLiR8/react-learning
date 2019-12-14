@@ -1,4 +1,4 @@
-button {
+button:not(.square) {
   height: 30px;
   min-width: 100px;
 }

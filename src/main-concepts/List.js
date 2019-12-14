@@ -42,6 +42,7 @@ function List() {
   const numbers = [2, 3, 5];
   return (
     <div>
+      <h2>Lists and Keys</h2>
       <NumberList numbers={numbers} />
       <NumList numbers={numbers} />
     </div>
