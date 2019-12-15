@@ -5,6 +5,7 @@ import Event from './Event'
 import ConditionalRender from './ConditionalRender'
 import List from './List'
 import Forms from './Form'
+import LiftingState from './LiftingState'
 
 function Main() {
   return (
@@ -14,7 +15,8 @@ function Main() {
       <Event/><hr/>
       <ConditionalRender/><hr/>
       <List/><hr/>
-      <Forms/>
+      <Forms/><hr/>
+      <LiftingState/>
     </div>
   )
 }

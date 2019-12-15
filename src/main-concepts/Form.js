@@ -164,6 +164,7 @@ class Reservation extends React.Component {
 function Forms() {
   return (
     <div>
+      <h2>Form</h2>
       <NameForm />
       <br />
       <EssayForm />
