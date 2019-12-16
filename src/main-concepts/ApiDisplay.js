@@ -6,6 +6,7 @@ import ConditionalRender from './ConditionalRender'
 import List from './List'
 import Forms from './Form'
 import LiftingState from './LiftingState'
+import Composition from './Composition'
 
 function Main() {
   return (
@@ -16,7 +17,8 @@ function Main() {
       <ConditionalRender/><hr/>
       <List/><hr/>
       <Forms/><hr/>
-      <LiftingState/>
+      <LiftingState/><hr/>
+      <Composition />
     </div>
   )
 }
