@@ -16,6 +16,7 @@ function ActionLink() {
   }
 
   return (
+    // eslint-disable-next-line
     <a href="#" onClick={handleClick}>
       Click me
     </a>
