@@ -24,7 +24,7 @@
 .Chat {
   width: 100%;
   height: 100%; 
-  background: pink;
+  background: lightsalmon;
 }
 
 .FancyBorder {
@@ -33,7 +33,7 @@
 }
 
 .FancyBorder-blue {
-  border-color: lightskyblue;
+  border-color: lightgray;
 }
 
 .Dialog-title {
