@@ -12,6 +12,8 @@
  * 组件进行“广播”，所有的组件都能访问到这些数据，也能访问到后续的数据更新。使用 context 的通用的场景包
  * 括管理当前的 locale，theme，或者一些缓存数据，这比替代方案要简单的多。
  * 
+ * 如果两个或者更多的 context 值经常被 *一起* 使用，那你可能要考虑一下另外创建你自己的渲染组件，以提供这些值
+ * 
  * API
  * 1. React.createContext
  *      const MyContext = React.createContext(defaultValue);
@@ -94,3 +96,20 @@ function Context() {
 }
 
 export default Context;
+
+/* 
+  因为 context 会使用参考标识（reference identity）来决定何时进行渲染，这里可能会有一些陷阱，
+  当 provider 的父组件进行重渲染时，可能会在 consumers 组件中触发意外的渲染。
+
+  当每一次 Provider 重渲染时，以下的代码会重渲染所有下面的 consumers 组件，因为 value 属性
+  总是被赋值为新的对象：
+
+    <Provider value={{something: 'something'}}>
+      <Toolbar />
+    </Provider>
+
+  为了防止这种情况，将 value 状态提升到父节点的 state 里:
+    <Provider value={this.state.value}>
+      <Toolbar />
+    </Provider>
+*/
