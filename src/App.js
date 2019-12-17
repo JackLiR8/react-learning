@@ -1,7 +1,8 @@
 import React from 'react';
 import Game from './demo/TicTacToe';
 import Main from './main-concepts/ApiDisplay';
-import Advanced from './advanced-guides/AdvancedDemo'
+import Advanced from './advanced-guides/AdvancedDemo';
+import HookDisplay from './hook/HookDisplay'
 import './App.css';
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
     <div className="App">
       <Game /><hr/>
       <Main/><hr />
-      <Advanced />
+      <Advanced /><hr />
+      <HookDisplay />
     </div>
   );
 }
