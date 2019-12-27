@@ -1,8 +1,4 @@
-import React from 'react';
-import Game from './demo/TicTacToe';
-import Main from './main-concepts/ApiDisplay';
-import Advanced from './advanced-guides/AdvancedDemo';
-import HookDisplay from './hook/HookDisplay'
+import React, { Suspense, lazy } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -10,6 +6,11 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+
+const Game = lazy(() => import('./demo/TicTacToe'));
+const Main = lazy(() => import('./main-concepts/ApiDisplay'));
+const Advanced = lazy(() => import('./advanced-guides/AdvancedDemo'));
+const HookDisplay = lazy(() => import('./hook/HookDisplay'));
 
 /* function App() {
   return (
@@ -34,19 +35,20 @@ function App() {
             <Link className="link" to="/hooks">Hooks</Link>&nbsp;
           </fieldset>
         </nav>
-
-        <Switch>
-          <Route path="/advanced">
-            <Advanced />
-          </Route>
-          <Route path="/hooks">
-            <HookDisplay />
-          </Route>
-          <Route path="/">
-            <Game />
-            <Main />
-          </Route>
-        </Switch>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route path="/advanced">
+              <Advanced />
+            </Route>
+            <Route path="/hooks">
+              <HookDisplay />
+            </Route>
+            <Route path="/">
+              <Game />
+              <Main />
+            </Route>
+          </Switch>
+        </Suspense>
       </div>
     </Router>
   )
