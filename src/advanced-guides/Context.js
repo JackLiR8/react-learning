@@ -88,10 +88,10 @@ class Page extends React.Component {
 
 function Context() {
   return (
-    <div>
-      <h2>Context</h2>
+    <fieldset>
+      <legend><h2>Context</h2></legend>
       <Page />
-    </div>
+    </fieldset>
   )
 }
 
