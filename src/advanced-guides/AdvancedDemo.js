@@ -1,6 +1,7 @@
 import React, { lazy } from 'react'
 import Context from './Context'
 const ForwardingRefs = lazy(() => import('./ForwardingRefs'))
+const HocDemo = lazy(() => import('./HOC'))
 
 function AdvancedDemo() {
   return (
@@ -8,6 +9,7 @@ function AdvancedDemo() {
       <h1>Advanced Guides</h1>
       <Context />
       <ForwardingRefs />
+      <HocDemo />
     </div>
   )
 }
