@@ -2,6 +2,12 @@
  * @file 高阶组件
  * 
  * 高阶组件是参数为组件，返回值为新组件的函数
+ * 
+ * 注意：
+ * 1. 不要在HOC中修改原始组件，使用组合
+ * 2. 不要在render方法中使用HOC
+ * 3. 务必复制静态方法
+ * 4. Refs不会被传递
  */
 
 import React, { useState, useEffect } from 'react'
