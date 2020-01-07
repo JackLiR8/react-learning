@@ -4,6 +4,7 @@ import EffectHook from './EffectHook'
 import Board from './useContext'
 import ReducerBox from './useReducer'
 import RefHook from './useRef'
+import CallbackHook from './useCallback'
 
 function HookDisplay() {
   return (
@@ -14,6 +15,7 @@ function HookDisplay() {
       <Board />
       <ReducerBox />
       <RefHook />
+      <CallbackHook />
     </div>
   )
 }

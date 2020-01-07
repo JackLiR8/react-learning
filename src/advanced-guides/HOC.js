@@ -14,7 +14,7 @@ import React, { useState, useEffect } from 'react'
 
 function hocDemo(WrappedComponent) {
   return function (props) {
-    let [data, setData] = useState(1);
+    let [data] = useState(1);
 
     useEffect(() => {
       console.log('HOC, useEffect' + props.name);
